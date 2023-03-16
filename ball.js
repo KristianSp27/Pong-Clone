@@ -7,20 +7,20 @@ export default class Ball {
   }
 }
 
-get x() {
-  return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--x"))
+get () {
+  return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--x"));
 }
 
-set x(value) {
-  this.ballElem.style.setProperty("--x", value)
+set (value) {
+  this.ballElem.style.setProperty("--x", value);
 }
 
-get y() {
+get () {
   return parseFloat(getComputedStyle(this.ballElem).getPropertyValue("--y"))
 }
 
-set y(value) {
-  this.ballElem.style.setProperty("--y", value)
+set (value) {
+  this.ballElem.style.setProperty("--y", value);
 }
 
 rect() {
