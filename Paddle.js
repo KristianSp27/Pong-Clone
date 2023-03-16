@@ -13,6 +13,10 @@ export default class Paddle {
     this.paddleElem.style.setProperty("--position", value);
   }
 
+  reset() {
+    this.position = 50;
+  }
+
   update(delta, ballHeight) {
     this.position += SPEED * delta * (ballHeight - this.position);
   }
