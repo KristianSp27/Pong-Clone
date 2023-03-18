@@ -48,11 +48,15 @@ if (rect.bottom >= window.innerHeight || rect.top <= 0) {
   this.direction.y *= 1;
 }
 
-if (rect.right >= window.innerWidth || rect.left <= 0) {
+if (paddleRects.some(r => isCollision(r, rect))) {
   this.direction.x *= -1;
 }
 }
 
 function randomNumberBetween(min, max) {
 return Math.random() * (max - min) + min;
+}
+
+function isCollision(rect1, rect2) {
+  return rect1 <= rect2.right && rect1.right >= rect2.left && rect1.top <= rect2.bottom && rect1.bottom >= rect2.top
 }
